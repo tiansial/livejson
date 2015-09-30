@@ -23,6 +23,6 @@ fs.watch("robot.json", function(event, fileName) {
 
 });
 
-http.listen(3000, function() {
+http.listen(3000, function() { 
 console.log('listening on *:3000');
 });
