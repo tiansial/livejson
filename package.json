@@ -1,0 +1,10 @@
+{
+  "name": "LiveRobot",
+  "version": "0.0.1",
+  "description": "Outputing realtime JSON",
+  "dependencies": {
+    "express": "^4.10.2",
+    "jsonfile": "^2.2.2",
+    "socket.io": "^1.3.7"
+  }
+}

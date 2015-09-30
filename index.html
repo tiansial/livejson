@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Robot</title>
+</head>
+<body>
+  <p>Start Your Robot Please.</p>
+  <p>Volume:<span id="volume"></span></p>
+  <p>X:<span id="x"></span></p>
+  <p>Y:<span id="y"></span></p>
+  <p>Z:<span id="z"></span></p>
+  <p>ID:<span id="id"></span></p>
+  <p>Type Exceeding:<span id="type"></span></p>
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    var socket = io.connect('http://localhost:3000');
+
+    socket.on('notification', function (data) {
+
+
+      $.each (data, function (bb) {
+          console.log (data[bb]);
+
+          $('#volume').text(data[bb].volume);
+          $('#x').text(data[bb].x);
+          $('#y').text(data[bb].y);
+          $('#z').text(data[bb].z);
+          $('#id').text(data[bb].id);
+          $('#type').text(data[bb].type);
+      });
+
+    });
+    </script>
+</body>
+</html>
